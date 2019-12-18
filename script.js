@@ -56,30 +56,58 @@ genButton.addEventListener ('click' , function (){
 
 });
 
-function generatePassword (length, number, upper, lower, symbol){
+function generatePassword (length, number, upper, lower, symbol) {
 
 let resultPass = "";
 
-let charTypes = [{number}, {upper}, {lower}, {symbol}];
-
-let filterTypes = [];
+let numChar = number + upper + lower + symbol;
 
 
-// I stopped here. need to filter out false statemetns
-function removeFalse ( {
-    for (number, upper, lower, symbol) {
-        if (charTypes[key] === false) {delete charTypes[key];}
-        else {filterTypes.push[key]};
-    }
-})
-removeFalse();
-console.log (charTypes);
-console.log(filterTypes);
-};
+// if (number == true && upper == true && lower == true && symbol == true) {
+//     let desiredChar = [{number}, {upper}, {lower}, {symbol}];
+// };
+
+// if (number == false && upper == true && lower == true && symbol == true) {
+//     let desiredChar = [{upper}, {lower}, {symbol}];
+// };
+
+// if (number == true && upper == false && lower == true && symbol == true) {
+// let desiredChar = [{number}, {lower}, {symbol}];
+// };
+
+// if (number == true && upper == true && lower == false && symbol == true) {
+//         let desiredChar = [{upper}, {number}, {symbol}];
+// };
+
+// if (number == false && upper == false && lower == false && symbol == false) {
+//     let desiredChar = ""
+// };
 
 
 
 
+
+
+let charTypes = [{number}, {upper}, {lower}, {symbol}].filter (item => Object.values(item)[0]);
+
+for (i = 0; i < length; i+= numChar) 
+{
+    charTypes.forEach (type => {
+    resultPass += randomizer[Object.keys(type)[0]] ();});
+}
+
+let securedPass = resultPass.slice(0, length);
+
+return securedPass;
+}
+
+function copyBtn () {
+    let copyText = document. getElementById ("password");
+    copyText.select();
+    document.execCommand ("copy");
+}
+
+document.getElementById("Copy").addEventListener ("click", copy);
 
 
 
