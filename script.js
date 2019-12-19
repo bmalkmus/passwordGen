@@ -27,7 +27,7 @@ let Requirements = alert("Please select what requirements you need to Generate y
 
 let charLength = prompt("Select between 8 and 128 characters");
 
-// need to insert a function to change charLength to number value
+// // need to insert a function to change charLength to number value
 let length = parseInt(charLength);
 
 if (length < 8 || length > 128) {
@@ -35,7 +35,7 @@ if (length < 8 || length > 128) {
     charLength = prompt("Select between 8 and 128 characters");
 
 
-    // console.log(length);
+//     // console.log(length);
     
 
 }
