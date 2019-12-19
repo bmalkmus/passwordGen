@@ -7,6 +7,6 @@ When laoded, the page will prompt you to choose character length of between 8 an
 Please contact me at bmalkmus@uw.edu for any support issues.
 ## Acknowledgment
 I would like to thank of all my teachers and TAs at University of Washington's Coding Bootcamp. 
-Main sources used for this project was Traversy Media through YouTube, mozilla.org, stackoverflow.com, and w3schools.com
+Main sources used for this project was mozilla.org, stackoverflow.com, w3schools.com, and Traversy Media. 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

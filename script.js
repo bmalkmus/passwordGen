@@ -37,14 +37,17 @@ if (length < 8 || length > 128) {
 console.log(length);
 
 }
-
+// promts continued
 let wantSymbols = confirm ("Do you want to use symbols?");
 let wantUpper = confirm("do you want to use Upper Case Letters?");
 let wantLower = confirm("do you want to use Lower Case Letters?");
 let wantNumbers = confirm ("do you want to use numbers?");
 
+
+
 // console.log([wantLower], [wantNumbers], [wantSymbols], [wantUpper]);
 
+//Generation of Function 
 let randomizer = {
     lower: getRandomLowerCase, upper: getRandomUpperCase, symbol: getRandomSymbol, number: getRandomNumber};
 
@@ -59,10 +62,14 @@ function generatePassword (length, number, upper, lower, symbol) {
 let resultPass = "";
 
 let numChar = number + upper + lower + symbol;
-
+// if all prompts are false, alert notification
+if (numChar == 0){
+    alert ("you did not select any types of characters you want. No Password generated")
+};
+// Filter false statements
 let charTypes = [{number}, {upper}, {lower}, {symbol}].filter (item => Object.values(item)[0]);
 
-
+// loop through true characters and length selected. result added to empty string
 for (i = 0; i < length; i+= numChar) 
 {
     charTypes.forEach ( function (type){
@@ -70,12 +77,12 @@ for (i = 0; i < length; i+= numChar)
         return resultPass;
     });
 }
-
+// only selects length about of characters of the string
 let securedPass = resultPass.slice(0, length);
 
 return securedPass;
 }
-
+// copy button function
 function copyBtn () {
     let copyText = document. getElementById ("password");
     copyText.select();
