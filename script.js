@@ -33,10 +33,8 @@ let length = parseInt(charLength);
 if (length < 8 || length > 128) {
     alert("please only select between 8 and 128 characters");
     charLength = prompt("Select between 8 and 128 characters");
-
-
-//     // console.log(length);
-    
+    length = parseInt(charLength);
+console.log(length);
 
 }
 
@@ -62,38 +60,15 @@ let resultPass = "";
 
 let numChar = number + upper + lower + symbol;
 
-
-// if (number == true && upper == true && lower == true && symbol == true) {
-//     let desiredChar = [{number}, {upper}, {lower}, {symbol}];
-// };
-
-// if (number == false && upper == true && lower == true && symbol == true) {
-//     let desiredChar = [{upper}, {lower}, {symbol}];
-// };
-
-// if (number == true && upper == false && lower == true && symbol == true) {
-// let desiredChar = [{number}, {lower}, {symbol}];
-// };
-
-// if (number == true && upper == true && lower == false && symbol == true) {
-//         let desiredChar = [{upper}, {number}, {symbol}];
-// };
-
-// if (number == false && upper == false && lower == false && symbol == false) {
-//     let desiredChar = ""
-// };
-
-
-
-
-
-
 let charTypes = [{number}, {upper}, {lower}, {symbol}].filter (item => Object.values(item)[0]);
+
 
 for (i = 0; i < length; i+= numChar) 
 {
-    charTypes.forEach (type => {
-    resultPass += randomizer[Object.keys(type)[0]] ();});
+    charTypes.forEach ( function (type){
+        resultPass = resultPass + randomizer[Object.keys(type)[0]] ();
+        return resultPass;
+    });
 }
 
 let securedPass = resultPass.slice(0, length);
@@ -107,7 +82,7 @@ function copyBtn () {
     document.execCommand ("copy");
 }
 
-document.getElementById("Copy").addEventListener ("click", copy);
+document.getElementById("Copy").addEventListener ("click", copyBtn);
 
 
 
