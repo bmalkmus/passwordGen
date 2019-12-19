@@ -70,14 +70,14 @@ if (numChar == 0){
 let charTypes = [{number}, {upper}, {lower}, {symbol}].filter (item => Object.values(item)[0]);
 
 // loop through true characters and length selected. result added to empty string
-for (i = 0; i < length; i+= numChar) 
+for (i = 0; i < length; i++) 
 {
     charTypes.forEach ( function (type){
         resultPass = resultPass + randomizer[Object.keys(type)[0]] ();
         return resultPass;
     });
 }
-// only selects length about of characters of the string
+// starts at index 0 and slices characters to length selected
 let securedPass = resultPass.slice(0, length);
 
 return securedPass;
