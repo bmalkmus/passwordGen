@@ -9,7 +9,7 @@ Please contact me at bmalkmus@uw.edu for any support issues.
 I would like to thank of all my teachers and TAs at University of Washington's Coding Bootcamp. 
 Main sources used for this project was mozilla.org, stackoverflow.com, w3schools.com, and Traversy Media. 
 ## Screenshot
-![Screenshot](Screenshot.png) 
+![Screenshot](Screenshot(1).png) 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
